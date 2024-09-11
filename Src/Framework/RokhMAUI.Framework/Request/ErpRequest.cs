@@ -1,5 +1,6 @@
 ﻿using RokhMAUI.Framework.Configuration;
 using RokhMAUI.Framework.Configuration.Interface;
+using RokhMAUI.Framework.DTOs;
 using RokhMAUI.Framework.DTOs.Auth;
 using RokhMAUI.Framework.DTOs.Auth.Rcc;
 using RokhMAUI.Framework.Extensions;
@@ -20,27 +21,33 @@ namespace RokhMAUI.Framework.Request
 			_client.DefaultRequestHeaders.AcceptLanguage.Add(new StringWithQualityHeaderValue("fa"));
 			_secureStorageService = secureStorageService;
 		}
-		public async Task Login(LoginDto dto)
+		public async Task<ApiReponseDto> Login(LoginDto dto)
 		{
 			var data = new StringContent(dto.ToJson(), Encoding.UTF8, "application/json");
-			var request = await _client.PostAsync("/api/v1/im/login", data);
+			var request = await _client.PostAsync("/api/v1/im/login/loginMobile", data);
 			if (request.IsSuccessStatusCode)
 			{
-				var response = await request.Content.ReadFromJsonAsync<AutheneticateResponseDto>();
-				await _secureStorageService.SetValueAsync("token", response.AccessToken.Token);
-				await _secureStorageService.SetValueAsync("fullName", response.fullName);
+				var response = await request.Content.ReadFromJsonAsync<MobileAuthDto>();
+				return new ApiReponseDto(response.Success, response.Message);
 			}
+			return new ApiReponseDto(false, "مشکلی در ارتباط با سرور وجود دارد");
 		}
 
-		public async Task LoginAgentDesktop()
+		public async Task<ApiReponseDto> LoginAgentDesktop()
 		{
 			await SetToken();
 			var request = await _client.PostAsync("/api/v1/cm/agentdesktop/login", null);
 			if (request.IsSuccessStatusCode)
 			{
 				var response = await request.Content.ReadFromJsonAsync<AgentLoginDto>();
-				await _secureStorageService.SetValueAsync("rcc-token", response.Authorization);
+				if (response != null && !string.IsNullOrWhiteSpace(response.Authorization))
+				{
+					await _secureStorageService.SetValueAsync("rcc-token", response.Authorization);
+					return new ApiReponseDto(true, "با موفقیت وارد شدید");
+				}
+				return new ApiReponseDto(false, "مشکلی در ارتباط با سرور وجود دارد");
 			}
+			return new ApiReponseDto(false, "مشکلی در ارتباط با سرور وجود دارد");
 		}
 
 		private async Task SetToken()

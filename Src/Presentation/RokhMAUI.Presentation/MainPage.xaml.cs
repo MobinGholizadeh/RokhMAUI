@@ -7,6 +7,8 @@ namespace RokhMAUI.Presentation
 	{
 		private RccReuqest _rccReuqest;
 		private ErpRequest _erpRequest;
+
+		private string Mobile;
 		public MainPage()
 		{
 			InitializeComponent();
@@ -18,14 +20,18 @@ namespace RokhMAUI.Presentation
 			_rccReuqest = Handler.MauiContext.Services.GetService<RccReuqest>();
 			_erpRequest = Handler.MauiContext.Services.GetService<ErpRequest>();
 		}
-
-		private async void OnCounterClicked(object sender, EventArgs e)
+		void OnMobileChanged(object sender, TextChangedEventArgs e)
 		{
-			await _erpRequest.Login(new LoginDto()
+			Mobile = e.NewTextValue;
+		}
+		private async void OnCounterClicked(object sender , EventArgs e)
+		{
+			var tt = await _erpRequest.Login(new LoginDto()
 			{
-				UserName = "admin",
-				Password = "admin12345"
+				Mobile = Mobile
 			});
+			await DisplayAlert("پیغام", tt.Message, "OK");
+
 			await _erpRequest.LoginAgentDesktop();
 
 			SemanticScreenReader.Announce(CounterBtn.Text);
