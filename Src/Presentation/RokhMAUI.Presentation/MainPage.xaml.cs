@@ -13,6 +13,7 @@ namespace RokhMAUI.Presentation
 		{
 			InitializeComponent();
 			HandlerChanged += OnHandlerChanged;
+
 		}
 
 		void OnHandlerChanged(object sender, EventArgs e)
@@ -24,7 +25,7 @@ namespace RokhMAUI.Presentation
 		{
 			Mobile = e.NewTextValue;
 		}
-		private async void OnCounterClicked(object sender , EventArgs e)
+		private async void OnCounterClicked(object sender, EventArgs e)
 		{
 			var tt = await _erpRequest.Login(new LoginDto()
 			{

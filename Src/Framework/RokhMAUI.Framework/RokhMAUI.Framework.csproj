@@ -26,18 +26,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="assemblies\Application.dll">
+    <None Update="Assemblies\Application.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="assemblies\Core.dll">
+    <None Update="Assemblies\Core.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="assemblies\Etraab.CC.Framework.dll">
+    <None Update="Assemblies\Etraab.CC.Framework.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="assemblies\Etraab.CC.Framework.Utils.dll">
+    <None Update="Assemblies\Etraab.CC.Framework.Utils.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Lang\" />
   </ItemGroup>
 
 </Project>

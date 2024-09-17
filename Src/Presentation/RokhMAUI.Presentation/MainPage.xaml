@@ -3,26 +3,99 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RokhMAUI.Presentation.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-           
-            <Label
-                Text="Hello, World!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <!--For Grids , this is how we define our Grids , in here ,first one is for the header of the project , and the second one is for the scrollable content-->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <!--Header content-->
+            <Grid Grid.Row="0" Padding="10">
+                <!--we define each column for our header , first one is for our first icons which are gonna be on the left , and second one is for our headline if we have anything to write on the header , and the third one is for our second logos which will be at the end of our row-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <!--Now we define each one which their places were already declared-->
+                <Image Grid.Column="0" Source="rectangle_81.png"
+                       AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
+                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"/>
 
-            <Entry x:Name="mobile"
-       Placeholder="Enter mobile"
-       TextChanged="OnMobileChanged" />
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
-        </VerticalStackLayout>
-    </ScrollView>
+                <Image Grid.Column="0" Source="rectangle_82.png"
+                    AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"/>
+
+                <Image Grid.Column="0" Source="rokh_icon.png"
+                    AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                <!--<Image Grid.Column="0" Source="rectangle_80.png"
+                    AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"/>
+
+                <Image Grid.Column="0" Source="rectangle_82.png"
+                    AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"/>-->
+
+                
+                
+                <Image Grid.Column="2" Source="rectangle_80.png"
+                    AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"/>
+
+                <Image Grid.Column="2" Source="rectangle_79.png"
+                    AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"/>
+                
+
+            </Grid>
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                Padding="30,0"
+                Spacing="25">
+
+
+                <Entry x:Name="mobile"
+                    Margin="0 , 140 , 0 , 0"
+                    FlowDirection="RightToLeft"
+                    Placeholder="شماره موبایل خود را وارد نمایید"
+                    TextChanged="OnMobileChanged" />
+            </VerticalStackLayout>
+        </ScrollView>
+            <ScrollView Grid.Row="2" >
+                <VerticalStackLayout
+                    Padding="30,0"
+                    Spacing="25"
+                    Margin="0 , 20, 0 , 20">
+                    <Button
+                    x:Name="CounterBtn"
+                    Text="ورود به حساب کاربری" 
+                    Style="{StaticResource LoginButton}"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Clicked="OnCounterClicked"
+                    HorizontalOptions="Fill" />
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+    </Grid>
 
 </ContentPage>
