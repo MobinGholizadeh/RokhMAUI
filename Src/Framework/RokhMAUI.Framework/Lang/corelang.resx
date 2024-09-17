@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Global_Tel" xml:space="preserve">
+    <value>تلفن</value>
+  </data>
+  <data name="Global_RokhRequired_ErrorMessage" xml:space="preserve">
+    <value>فیلد الزامی است</value>
+  </data>
+  <data name="Global_Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="Global_Family" xml:space="preserve">
+    <value>نام خانوادگی</value>
+  </data>
+  <data name="Global_Email" xml:space="preserve">
+    <value>پست الکترونیکی</value>
+  </data>
+  <data name="Global_RokhEmailAddressAttribute_RokhEmailAddressAttribute" xml:space="preserve">
+    <value>خطا در فرمت ایمیل</value>
+  </data>
+  <data name="Global_RokhStringLength_ErrorMessage" xml:space="preserve">
+    <value>مقدار باید مابین {1} و {2} حرف باشد</value>
+  </data>
+  <data name="Global_RokhMaxLengthAttribute_ErrorMessage" xml:space="preserve">
+    <value>مقدار باید حداکثر {1} حرف باشد</value>
+  </data>
+  <data name="Global_RokhMinLengthAttribute_ErrorMessage" xml:space="preserve">
+    <value>مقدار باید حداقل {1} حرف باشد</value>
+  </data>
+  <data name="Global_RokhRangeAttribute_ErrorMessage" xml:space="preserve">
+    <value>مقدار باید مابین {1} و {2} باشد</value>
+  </data>
+  <data name="Global_HttpStatusCode_OK" xml:space="preserve">
+    <value>قبول</value>
+  </data>
+  <data name="Global_HttpStatusCode.NotFound" xml:space="preserve">
+    <value>یافت نشد</value>
+  </data>
+  <data name="Global_HttpStatusCode.InternalServerError" xml:space="preserve">
+    <value>خطای سرور</value>
+  </data>
+  <data name="Global_HttpStatusCode.BadRequest" xml:space="preserve">
+    <value>درخواست نامعتبر</value>
+  </data>
+  <data name="Global_HttpStatusCode.UnsupportedMediaType" xml:space="preserve">
+    <value>عدم پشتیبانی فرمت وردودی</value>
+  </data>
+  <data name="Global_RokhCreateChecker_Guid" xml:space="preserve">
+    <value>کلید باید فاقد مقدار باشد</value>
+  </data>
+  <data name="Global_RokhCreateChecker_Guids" xml:space="preserve">
+    <value>کلیدها باید فاقد مقدار باشند</value>
+  </data>
+  <data name="Global_RokhUpdateChecker_Guid" xml:space="preserve">
+    <value>ورود مقدار کلید الزامی است</value>
+  </data>
+  <data name="Global_RokhUpdateChecker_Guids" xml:space="preserve">
+    <value>مقادیر کلید فاقد مقدار می باشد</value>
+  </data>
+  <data name="Global_RokhCreateChecker_Guid_Duplicate" xml:space="preserve">
+    <value>مقادیر کلید تکراری است</value>
+  </data>
+  <data name="Global_RokhValidEnumValue_IsValid" xml:space="preserve">
+    <value>مقدار معتبر نمی باشد</value>
+  </data>
+  <data name="Global_Password_Wrong" xml:space="preserve">
+    <value>رمز عبور نادرست می باشد</value>
+  </data>
+  <data name="Global_CodeGeneratorPaternDeleteError" xml:space="preserve">
+    <value>مشکلی در حذف الگوی کدگذاری مورد نظر پیش آمد</value>
+  </data>
+  <data name="Global_CodeGeneratorPaternSaveError" xml:space="preserve">
+    <value>مشکلی در ثبت الگوی کدگذاری مورد نظر پیش آمد</value>
+  </data>
+  <data name="Global_CodeIsRequired" xml:space="preserve">
+    <value>ورود کد اجباری می باشد</value>
+  </data>
+  <data name="Global_DublicateCode" xml:space="preserve">
+    <value>کد وارد شده {0} قبلا در سیستم ثبت شده است</value>
+  </data>
+  <data name="Global_ErrorOnSave" xml:space="preserve">
+    <value>مشکلی در ثبت اطلاعات پیش آمده است</value>
+  </data>
+  <data name="Global_PaternIsRequired" xml:space="preserve">
+    <value>الگو الزامی است</value>
+  </data>
+  <data name="Global_DeleteError" xml:space="preserve">
+    <value>مشکلی در حذف رکورد مورد نظر پیش آمده است</value>
+  </data>
+  <data name="Global_Disable" xml:space="preserve">
+    <value>غیرفعال</value>
+  </data>
+  <data name="Global_DublicateConcept" xml:space="preserve">
+    <value>مفهوم وارد شده قبلا در سیستم ثبت شده است</value>
+  </data>
+  <data name="Global_EmailOrPhoenNumberNotRegistered" xml:space="preserve">
+    <value>این شماره یا ایمیل قبلا ثبت نشده است</value>
+  </data>
+  <data name="Global_Enable" xml:space="preserve">
+    <value>فعال</value>
+  </data>
+  <data name="Global_ErrorOnDelete" xml:space="preserve">
+    <value>مشکلی در حذف پیش آمده است</value>
+  </data>
+  <data name="Global_FormNotFound" xml:space="preserve">
+    <value>فرم مورد نظر یافت نشد</value>
+  </data>
+  <data name="Global_DublicateUserName" xml:space="preserve">
+    <value>نام کاربری تکراری می باشد</value>
+  </data>
+  <data name="Global_ErrorDeleteUser" xml:space="preserve">
+    <value>مشکلی در حذف کاربر مورد نظر پیش آمده است</value>
+  </data>
+  <data name="Global_ErrorEditPassword" xml:space="preserve">
+    <value>مشکلی در تغییر رمز عبور پیش آمد</value>
+  </data>
+  <data name="Global_ErrorEditUser" xml:space="preserve">
+    <value>مشکلی در ویرایش کاربر مورد نظر پیش آمده است</value>
+  </data>
+  <data name="Global_ErrorLockUser" xml:space="preserve">
+    <value>مشکلی در قفل حساب پیش آمده است</value>
+  </data>
+  <data name="Global_PhoneNuNotFound" xml:space="preserve">
+    <value>شماره تماس وارد شده یافت نشد</value>
+  </data>
+  <data name="Global_DublicateTitle" xml:space="preserve">
+    <value>عنوان تکراری می باشد</value>
+  </data>
+  <data name="Global_Description" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="Global_EntryType" xml:space="preserve">
+    <value>نوع ورودی</value>
+  </data>
+  <data name="Global_Title" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="Global_Type" xml:space="preserve">
+    <value>نوع</value>
+  </data>
+  <data name="Global_Priority" xml:space="preserve">
+    <value>اولویت</value>
+  </data>
+  <data name="Global_SerialNumber" xml:space="preserve">
+    <value>شماره سریال</value>
+  </data>
+  <data name="Global_StartCode" xml:space="preserve">
+    <value>کد شروع سریال</value>
+  </data>
+  <data name="Global_Id" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="Global_SerialNumberLength" xml:space="preserve">
+    <value>طول سریال</value>
+  </data>
+  <data name="Global_Auto" xml:space="preserve">
+    <value>اتوماتیک</value>
+  </data>
+  <data name="Global_Level" xml:space="preserve">
+    <value>سطح</value>
+  </data>
+  <data name="Global_Manual" xml:space="preserve">
+    <value>دستی</value>
+  </data>
+  <data name="Global_Help" xml:space="preserve">
+    <value>راهنما</value>
+  </data>
+  <data name="Global_BaseName" xml:space="preserve">
+    <value>نام پایه</value>
+  </data>
+  <data name="Global_BaseStandardName" xml:space="preserve">
+    <value>نام پایه استاندارد</value>
+  </data>
+  <data name="Global_Separator" xml:space="preserve">
+    <value>جدا کننده</value>
+  </data>
+  <data name="Global_Concept" xml:space="preserve">
+    <value>مفهوم</value>
+  </data>
+  <data name="Global_Quantity" xml:space="preserve">
+    <value>مقادیر</value>
+  </data>
+  <data name="Global_Duplicate" xml:space="preserve">
+    <value>This form has already been registered in the system</value>
+  </data>
+  <data name="Global_Parameter" xml:space="preserve">
+    <value>پارامتر</value>
+  </data>
+  <data name="Global_ProductProductionType" xml:space="preserve">
+    <value>نوع تولید محصول</value>
+  </data>
+  <data name="Global_SerialType" xml:space="preserve">
+    <value>نوع سریال</value>
+  </data>
+  <data name="Global_ClassCode" xml:space="preserve">
+    <value>کد طبقه</value>
+  </data>
+  <data name="Global_ClassTitle" xml:space="preserve">
+    <value>عنوان طبقه</value>
+  </data>
+  <data name="Global_LevelTitle" xml:space="preserve">
+    <value>عنوان سطح</value>
+  </data>
+  <data name="Global_RelConcept" xml:space="preserve">
+    <value>مفهوم مرتبط</value>
+  </data>
+  <data name="Global_StructureTitle" xml:space="preserve">
+    <value>عنوان ساختار</value>
+  </data>
+  <data name="Global_StructureType" xml:space="preserve">
+    <value>نوع ساختار</value>
+  </data>
+  <data name="Global_Discode" xml:space="preserve">
+    <value>کد</value>
+  </data>
+  <data name="Global_ControllerAccept" xml:space="preserve">
+    <value>تایید کنترلر</value>
+  </data>
+  <data name="Global_CreateDate" xml:space="preserve">
+    <value>تاریخ ثبت</value>
+  </data>
+  <data name="Global_Creator" xml:space="preserve">
+    <value>ثبت کننده</value>
+  </data>
+  <data name="Global_FinalAccept" xml:space="preserve">
+    <value>تایید نهایی</value>
+  </data>
+  <data name="Global_FullName" xml:space="preserve">
+    <value>نام کامل</value>
+  </data>
+  <data name="Global_MainUnit" xml:space="preserve">
+    <value>واحد اصلی</value>
+  </data>
+  <data name="Global_NotAccept" xml:space="preserve">
+    <value>تایید نشده</value>
+  </data>
+  <data name="Global_ShortName" xml:space="preserve">
+    <value>نام مختصر</value>
+  </data>
+  <data name="Global_SubUnit" xml:space="preserve">
+    <value>واحد فرعی</value>
+  </data>
+  <data name="Global_Status" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+</root>
