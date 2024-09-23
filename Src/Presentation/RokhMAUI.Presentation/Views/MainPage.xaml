@@ -40,7 +40,7 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
 
-                <!--<Image Grid.Column="0" Source="rectangle_80.png"
+            <!--<Image Grid.Column="0" Source="rectangle_80.png"
                     AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
                     HorizontalOptions="Start"
@@ -78,7 +78,7 @@
                     Margin="0 , 140 , 0 , 0"
                     FlowDirection="RightToLeft"
                     Placeholder="شماره موبایل خود را وارد نمایید"
-                    TextChanged="OnMobileChanged" />
+                    Text="{Binding Mobile}" />
             </VerticalStackLayout>
         </ScrollView>
             <ScrollView Grid.Row="2" >
@@ -91,8 +91,9 @@
                     Text="ورود به حساب کاربری" 
                     Style="{StaticResource LoginButton}"
                     SemanticProperties.Hint="Counts the number of times you click"
-                    Clicked="OnCounterClicked"
-                    HorizontalOptions="Fill" />
+                    Command="{Binding LoginCommand}"
+                    HorizontalOptions="Fill" 
+                        IsEnabled="True"/>
                 </VerticalStackLayout>
             </ScrollView>
         </Grid>
