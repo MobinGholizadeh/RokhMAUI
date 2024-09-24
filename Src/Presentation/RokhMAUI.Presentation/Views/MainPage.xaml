@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RokhMAUI.Presentation.MainPage">
+             x:Class="RokhMAUI.Presentation.MainPage"
+             xmlns:viewmodel="clr-namespace:RokhMAUI.Presentation.ViewModels"
+             x:DataType="viewmodel:MainPageViewModel">
 
     <Grid>
         <Grid>
@@ -13,12 +15,12 @@
             </Grid.RowDefinitions>
             
             <!--Header content-->
-            <Grid Grid.Row="0" Padding="10">
+            <Grid Grid.Row="0">
                 <!--we define each column for our header , first one is for our first icons which are gonna be on the left , and second one is for our headline if we have anything to write on the header , and the third one is for our second logos which will be at the end of our row-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 
                 <!--Now we define each one which their places were already declared-->
@@ -60,7 +62,7 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Start"/>
 
-                <Image Grid.Column="2" Source="rectangle_79.png"
+                <Image Grid.Column="2" Margin="13,0,0,0" Source="rectangle_79.png"
                     AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
                     HorizontalOptions="Start"
@@ -73,10 +75,10 @@
                 Padding="30,0"
                 Spacing="25">
 
-
                 <Entry x:Name="mobile"
                     Margin="0 , 140 , 0 , 0"
                     FlowDirection="RightToLeft"
+                    FontSize="16"
                     Placeholder="شماره موبایل خود را وارد نمایید"
                     Text="{Binding Mobile}" />
             </VerticalStackLayout>
@@ -87,13 +89,12 @@
                     Spacing="25"
                     Margin="0 , 20, 0 , 20">
                     <Button
-                    x:Name="CounterBtn"
+                    x:Name="LoginBtn"
                     Text="ورود به حساب کاربری" 
                     Style="{StaticResource LoginButton}"
                     SemanticProperties.Hint="Counts the number of times you click"
                     Command="{Binding LoginCommand}"
-                    HorizontalOptions="Fill" 
-                        IsEnabled="True"/>
+                    HorizontalOptions="Fill"/>
                 </VerticalStackLayout>
             </ScrollView>
         </Grid>

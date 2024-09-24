@@ -5,10 +5,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:RokhMAUI.Presentation"
     Shell.FlyoutBehavior="Disabled"
-    Title="RokhMAUI.Presentation">
+    Title="RokhMAUI.Presentation"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="Transparent"
+    Shell.BackgroundColor="Transparent">
 
     <ShellContent
-        Title="Home"
+        Title=""
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RokhMAUI.Presentation.Views.VerificationCodePage"
+             Title="VerificationCodePage"
+             xmlns:viewmodel="clr-namespace:RokhMAUI.Presentation.ViewModels"
+             x:DataType="viewmodel:VerificationCodeViewModel">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Source="rectangle_81.png"
+                    AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"/>
+
+                <Image Grid.Column="0" Source="rectangle_82.png"
+                    AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"/>
+
+                <Image Grid.Column="0" Source="rokh_icon.png"
+                    AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+                <Image Grid.Column="2" Source="rectangle_80.png"
+                    AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"/>
+
+                <Image Grid.Column="2" Margin="13,0,0,0" Source="rectangle_79.png"
+                    AbsoluteLayout.LayoutBounds="0 , 0 , AutoSize , AutoSize"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"/>
+
+
+            </Grid>
+            <Grid Margin="20" Grid.Row="1">
+                 <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="*" />
+                     <ColumnDefinition Width="*" />
+                     <ColumnDefinition Width="*" />
+                     <ColumnDefinition Width="*" />
+                     <ColumnDefinition Width="*" />
+                     <ColumnDefinition Width="*" />
+                 </Grid.ColumnDefinitions>
+
+                 <Entry x:Name="Digit1" Grid.Column="0" MaxLength="1" FontSize="24"
+                            Text="{Binding Digit1}" TextChanged="Entry_TextChanged"
+                            WidthRequest="40" HeightRequest="40" HorizontalTextAlignment="Center" />
+
+                 <Entry x:Name="Digit2" Grid.Column="1" MaxLength="1" FontSize="24"
+                            Text="{Binding Digit2}" TextChanged="Entry_TextChanged"
+                            WidthRequest="40" HeightRequest="40" HorizontalTextAlignment="Center" />
+
+                 <Entry x:Name="Digit3" Grid.Column="2" MaxLength="1" FontSize="24"
+                            Text="{Binding Digit3}" TextChanged="Entry_TextChanged"
+                            WidthRequest="40" HeightRequest="40" HorizontalTextAlignment="Center" />
+
+                 <Entry x:Name="Digit4" Grid.Column="3" MaxLength="1" FontSize="24"
+                            Text="{Binding Digit4}" TextChanged="Entry_TextChanged"
+                            WidthRequest="40" HeightRequest="40" HorizontalTextAlignment="Center" />
+
+                 <Entry x:Name="Digit5" Grid.Column="4" MaxLength="1" FontSize="24"
+                            Text="{Binding Digit5}" TextChanged="Entry_TextChanged"
+                            WidthRequest="40" HeightRequest="40" HorizontalTextAlignment="Center" />
+
+                 <Entry x:Name="Digit6" Grid.Column="5" MaxLength="1" FontSize="24"
+                            Text="{Binding Digit6}" TextChanged="Entry_TextChanged"
+                            WidthRequest="40" HeightRequest="40" HorizontalTextAlignment="Center" />
+        </Grid>
+        <Grid Grid.Row="2" Margin="10">
+                <VerticalStackLayout
+                    Padding="30,0"
+                    Spacing="25"
+                    Margin="0 , 20, 0 , 20">
+                    
+                </VerticalStackLayout>
+                <Button
+                    x:Name="VerificationBtn"
+                    Text="ورود به حساب کاربری"
+                    Style="{StaticResource VerificationBtn}"
+                    Command="{Binding }"
+                    HorizontalOptions="Fill"
+                    >
+                    
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>
