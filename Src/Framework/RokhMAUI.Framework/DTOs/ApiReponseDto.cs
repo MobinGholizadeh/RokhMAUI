@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RokhMAUI.Framework.DTOs
+﻿namespace RokhMAUI.Framework.DTOs
 {
-	public record ApiReponseDto(bool Success, string Message);
+	public record ApiReponseDto(bool Success, string Message, bool hasPersonPost = false);
+	public record ApiReponseDto<T>(bool Success, string Message, bool HasPersonPost = false, T Data = default);
 }

@@ -27,7 +27,7 @@ namespace RokhMAUI.Presentation.ViewModels
 			var result = await _erpRequest.Login(new LoginDto { Mobile = mobile });
 			if (result.Success)
 			{
-				await Shell.Current.GoToAsync($"{nameof(VerificationCodePage)}?mobile={mobile}");
+				await Shell.Current.GoToAsync($"{nameof(VerificationCodePage)}?MobileNumber={mobile}");
 			}
 			await App.Current.MainPage.DisplayAlert("Message", result.Message, "OK");
 		}

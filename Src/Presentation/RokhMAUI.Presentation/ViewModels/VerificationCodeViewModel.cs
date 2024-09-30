@@ -1,17 +1,18 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using RokhMAUI.Framework.Request;
+using RokhMAUI.Presentation.Views;
+using System.Text.Json;
 
 namespace RokhMAUI.Presentation.ViewModels
 {
-	[QueryProperty("mobile", "mobile")]
+	[QueryProperty("Mobile", "MobileNumber")]
 	public partial class VerificationCodeViewModel : ObservableObject
 	{
-		[ObservableProperty]
-		string code;
+		private readonly ErpRequest _erpRequest;
 
 		[ObservableProperty]
 		string mobile;
-
 
 		[ObservableProperty]
 		private string digit1;
@@ -31,11 +32,30 @@ namespace RokhMAUI.Presentation.ViewModels
 		[ObservableProperty]
 		private string digit6;
 
+		public VerificationCodeViewModel(ErpRequest erpRequest)
+		{
+			_erpRequest = erpRequest;
+		}
 
 		[RelayCommand]
-		void CheckVerificatoinCode()
+		async void CheckVerificatoinCode()
 		{
-
+			var code = digit1 + digit2 + digit3 + digit4 + digit5 + digit6;
+			if (!string.IsNullOrWhiteSpace(code))
+			{
+				var dto = new Framework.DTOs.Auth.LoginDto
+				{
+					Mobile = mobile,
+					VerifyCode = code
+				};
+				var result = await _erpRequest.VerifyCode(dto);
+				if (result.HasPersonPost)
+				{
+					var serializedItems = JsonSerializer.Serialize(result.Data);
+					await Shell.Current.GoToAsync($"{nameof(PersonPostPage)}?serializedPersonPosts={serializedItems}");
+				}
+				await App.Current.MainPage.DisplayAlert("Message", result.Message, "OK");
+			}
 		}
 	}
 }

@@ -22,15 +22,18 @@ namespace RokhMAUI.Presentation
 				});
 			builder.Services.AddScoped(_ => new HttpClient());
 			builder.Services.AddTransient<ISecureStorageService, SecureStorageService>();
+
 			builder.Services.AddSingleton<ErpRequest>();
 			builder.Services.AddSingleton<RccReuqest>();
 
 			builder.Services.AddSingleton<MainPage>();
 			builder.Services.AddSingleton<MainPageViewModel>();
 
-			builder.Services.AddSingleton<VerificationCodePage>();
-			builder.Services.AddSingleton<VerificationCodeViewModel>();
+			builder.Services.AddScoped<VerificationCodePage>();
+			builder.Services.AddScoped<VerificationCodeViewModel>();
 
+			builder.Services.AddScoped<PersonPostPage>();
+			builder.Services.AddScoped<PersonPostViewModel>();
 
 			builder.ConfigureLifecycleEvents(events =>
 			{

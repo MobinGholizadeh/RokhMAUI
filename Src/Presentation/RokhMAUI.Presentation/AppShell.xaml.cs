@@ -9,6 +9,8 @@ namespace RokhMAUI.Presentation
 			InitializeComponent();
 
 			Routing.RegisterRoute(nameof(VerificationCodePage), typeof(VerificationCodePage));
+			Routing.RegisterRoute(nameof(PersonPostPage), typeof(PersonPostPage));
+
 		}
 	}
 }

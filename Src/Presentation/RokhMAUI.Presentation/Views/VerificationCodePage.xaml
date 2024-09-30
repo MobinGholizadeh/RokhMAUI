@@ -97,7 +97,7 @@
                     x:Name="VerificationBtn"
                     Text="ورود به حساب کاربری"
                     Style="{StaticResource VerificationBtn}"
-                    Command="{Binding }"
+                    Command="{Binding CheckVerificatoinCodeCommand}"
                     HorizontalOptions="Fill"
                     >
                     

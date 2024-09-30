@@ -3,6 +3,7 @@ using RokhMAUI.Framework.Configuration.Interface;
 using RokhMAUI.Framework.DTOs;
 using RokhMAUI.Framework.DTOs.Auth;
 using RokhMAUI.Framework.DTOs.Auth.Rcc;
+using RokhMAUI.Framework.DTOs.PersonPost;
 using RokhMAUI.Framework.Extensions;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
@@ -32,6 +33,24 @@ namespace RokhMAUI.Framework.Request
 			}
 			return new ApiReponseDto(false, "مشکلی در ارتباط با سرور وجود دارد");
 		}
+
+		public async Task<ApiReponseDto<List<PersonPostDto>>> VerifyCode(LoginDto dto)
+		{
+			var data = new StringContent(dto.ToJson(), Encoding.UTF8, "application/json");
+			var request = await _client.PostAsync("/api/v1/im/login/verifyCode", data);
+			if (request.IsSuccessStatusCode)
+			{
+				var response = await request.Content.ReadFromJsonAsync<AutheneticateResponseDto>();
+				if (response.Items != null && response.Items.Any()) return new ApiReponseDto<List<PersonPostDto>>(true, "", true, response.Items);
+
+				if (string.IsNullOrEmpty(response.AccessToken.Token)) return new ApiReponseDto<List<PersonPostDto>>(false, "کد تایید نامعتبر است");
+				await _secureStorageService.SetValueAsync("token", response.AccessToken.Token);
+				return new ApiReponseDto<List<PersonPostDto>>(response.Success, response.Message);
+			}
+			return new ApiReponseDto<List<PersonPostDto>>(false, "کد تایید نامعتبر است");
+		}
+
+
 
 		public async Task<ApiReponseDto> LoginAgentDesktop()
 		{
