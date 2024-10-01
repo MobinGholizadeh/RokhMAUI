@@ -2,8 +2,10 @@
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.Unicode;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -18,6 +20,7 @@ namespace RokhMAUI.Framework.Extensions
 
 		public static string ToJson<T>(this List<T> list, bool upper = false)
 		{
+
 			return JsonSerializer.Serialize(list, GetJsonOptions(upper));
 		}
 
@@ -48,6 +51,7 @@ namespace RokhMAUI.Framework.Extensions
 			var options = new JsonSerializerOptions
 			{
 				DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+				Encoder = JavaScriptEncoder.Create(UnicodeRanges.Arabic, UnicodeRanges.All),
 			};
 
 			options.Converters.Add(new JsonStringEnumConverter());

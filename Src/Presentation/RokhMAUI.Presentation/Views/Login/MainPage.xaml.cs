@@ -8,7 +8,7 @@ namespace RokhMAUI.Presentation
 		private RccReuqest _rccReuqest;
 		private ErpRequest _erpRequest;
 
-		public MainPage(MainPageViewModel vm)
+		public MainPage(MainPageVM vm)
 		{
 			InitializeComponent();
 			HandlerChanged += OnHandlerChanged;

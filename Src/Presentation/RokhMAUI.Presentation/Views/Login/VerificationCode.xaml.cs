@@ -3,11 +3,11 @@ using RokhMAUI.Presentation.ViewModels;
 
 namespace RokhMAUI.Presentation.Views;
 
-public partial class VerificationCodePage : ContentPage
+public partial class VerificationCode : ContentPage
 {
 	private ErpRequest _erpRequest;
 
-	public VerificationCodePage(VerificationCodeViewModel vm)
+	public VerificationCode(VerificationCodeVM vm)
 	{
 		InitializeComponent();
 		BindingContext = vm;
@@ -28,15 +28,16 @@ public partial class VerificationCodePage : ContentPage
 	{
 		var currentEntry = sender as Entry;
 
-		if (currentEntry.Text.Length == 1) // Move to next Entry if a character is entered
+		if (currentEntry.Text.Length == 1)
 		{
 			MoveFocusToNextEntry(currentEntry);
 		}
-		else if (string.IsNullOrEmpty(currentEntry.Text)) // Move to previous Entry if deleted
+		else if (string.IsNullOrEmpty(currentEntry.Text))
 		{
 			MoveFocusToPreviousEntry(currentEntry);
 		}
 	}
+
 
 	private void MoveFocusToNextEntry(Entry currentEntry)
 	{

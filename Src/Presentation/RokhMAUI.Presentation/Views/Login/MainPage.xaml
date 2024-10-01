@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RokhMAUI.Presentation.MainPage"
              xmlns:viewmodel="clr-namespace:RokhMAUI.Presentation.ViewModels"
-             x:DataType="viewmodel:MainPageViewModel">
+             x:DataType="viewmodel:MainPageVM">
 
     <Grid>
         <Grid>
@@ -76,7 +76,7 @@
                 Spacing="25">
 
                 <Entry x:Name="mobile"
-                    Margin="0 , 140 , 0 , 0"
+                    Margin="0 , 100 , 0 , 0"
                     FlowDirection="RightToLeft"
                     FontSize="16"
                     Placeholder="شماره موبایل خود را وارد نمایید"

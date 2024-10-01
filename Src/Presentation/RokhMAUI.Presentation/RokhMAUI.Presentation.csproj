@@ -68,16 +68,28 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\PersonPostPage.xaml">
+	  <MauiXaml Update="Views\Login\PersonPost.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\VerificationCodePage.xaml">
+	  <MauiXaml Update="Views\Login\VerificationCode.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\UserChats.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Models\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\Login\PersonPost.xaml.cs">
+	    <DependentUpon>PersonPost.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Login\VerificationCode.xaml.cs">
+	    <DependentUpon>VerificationCode.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

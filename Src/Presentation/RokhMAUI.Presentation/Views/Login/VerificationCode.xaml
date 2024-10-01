@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RokhMAUI.Presentation.Views.VerificationCodePage"
-             Title="VerificationCodePage"
+             x:Class="RokhMAUI.Presentation.Views.VerificationCode"
+             Title="VerificationCode"
              xmlns:viewmodel="clr-namespace:RokhMAUI.Presentation.ViewModels"
-             x:DataType="viewmodel:VerificationCodeViewModel">
+             x:DataType="viewmodel:VerificationCodeVM">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -52,7 +52,7 @@
 
 
             </Grid>
-            <Grid Margin="20" Grid.Row="1">
+            <Grid Grid.Row="1" Margin="20">
                  <Grid.ColumnDefinitions>
                      <ColumnDefinition Width="*" />
                      <ColumnDefinition Width="*" />

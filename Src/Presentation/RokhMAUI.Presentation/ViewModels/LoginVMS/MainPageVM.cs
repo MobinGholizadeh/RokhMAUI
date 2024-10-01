@@ -6,7 +6,7 @@ using RokhMAUI.Presentation.Views;
 
 namespace RokhMAUI.Presentation.ViewModels
 {
-	public partial class MainPageViewModel : ObservableObject
+	public partial class MainPageVM : ObservableObject
 	{
 		private readonly RccReuqest _rccReuqest;
 		private readonly ErpRequest _erpRequest;
@@ -15,7 +15,7 @@ namespace RokhMAUI.Presentation.ViewModels
 		[ObservableProperty]
 		private string mobile;
 
-		public MainPageViewModel(RccReuqest rccReuqest, ErpRequest erpRequest)
+		public MainPageVM(RccReuqest rccReuqest, ErpRequest erpRequest)
 		{
 			_rccReuqest = rccReuqest;
 			_erpRequest = erpRequest;
@@ -27,7 +27,7 @@ namespace RokhMAUI.Presentation.ViewModels
 			var result = await _erpRequest.Login(new LoginDto { Mobile = mobile });
 			if (result.Success)
 			{
-				await Shell.Current.GoToAsync($"{nameof(VerificationCodePage)}?MobileNumber={mobile}");
+				await Shell.Current.GoToAsync($"{nameof(VerificationCode)}?MobileNumber={mobile}");
 			}
 			await App.Current.MainPage.DisplayAlert("Message", result.Message, "OK");
 		}
