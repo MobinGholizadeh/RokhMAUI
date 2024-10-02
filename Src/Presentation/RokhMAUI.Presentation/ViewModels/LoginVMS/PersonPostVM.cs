@@ -8,8 +8,8 @@ using RokhMAUI.Presentation.Views;
 namespace RokhMAUI.Presentation.ViewModels
 {
 	[QueryProperty("PersonPostsJson", "serializedPersonPosts")]
+	[QueryProperty("Number", "phoneNumber")]
 	[QueryProperty("Code", "code")]
-	[QueryProperty("Mobile", "mobile")]
 
 	public partial class PersonPostVM : ObservableObject
 	{
@@ -19,7 +19,7 @@ namespace RokhMAUI.Presentation.ViewModels
 		private string personPostsJson;
 
 		[ObservableProperty]
-		private string mobile;
+		private string number;
 
 		[ObservableProperty]
 		private string code;
@@ -40,7 +40,7 @@ namespace RokhMAUI.Presentation.ViewModels
 		{
 			var dto = new Framework.DTOs.Auth.LoginDto
 			{
-				Mobile = mobile,
+				Mobile = number,
 				VerifyCode = code,
 				PersonPostId = selectedPersonPost.PersonPostId
 			};
@@ -49,7 +49,10 @@ namespace RokhMAUI.Presentation.ViewModels
 			{
 				Shell.Current.GoToAsync(nameof(UserChats));
 			}
-			await App.Current.MainPage.DisplayAlert("Message", result.Message, "OK");
+			if (!result.Success)
+			{
+				await App.Current.MainPage.DisplayAlert("Message", result.Message, "OK");
+			}
 		}
 
 		partial void OnPersonPostsJsonChanged(string value)

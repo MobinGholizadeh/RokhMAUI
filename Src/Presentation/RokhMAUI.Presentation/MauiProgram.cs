@@ -61,11 +61,11 @@ namespace RokhMAUI.Presentation
 			builder.Services.AddSingleton<MainPage>();
 			builder.Services.AddSingleton<MainPageVM>();
 
-			builder.Services.AddScoped<VerificationCode>();
-			builder.Services.AddScoped<VerificationCodeVM>();
+			builder.Services.AddTransient<VerificationCode>();
+			builder.Services.AddTransient<VerificationCodeVM>();
 
-			builder.Services.AddScoped<PersonPost>();
-			builder.Services.AddScoped<PersonPostVM>();
+			builder.Services.AddTransient<PersonPost>();
+			builder.Services.AddTransient<PersonPostVM>();
 
 			builder.ConfigureLifecycleEvents(events =>
 			{

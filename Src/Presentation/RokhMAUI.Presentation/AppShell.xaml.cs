@@ -10,6 +10,8 @@ namespace RokhMAUI.Presentation
 
 			Routing.RegisterRoute(nameof(VerificationCode), typeof(VerificationCode));
 			Routing.RegisterRoute(nameof(PersonPost), typeof(PersonPost));
+			Routing.RegisterRoute(nameof(UserChats), typeof(UserChats));
+
 
 		}
 	}

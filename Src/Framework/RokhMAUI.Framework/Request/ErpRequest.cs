@@ -41,6 +41,9 @@ namespace RokhMAUI.Framework.Request
 			if (request.IsSuccessStatusCode)
 			{
 				var response = await request.Content.ReadFromJsonAsync<AutheneticateResponseDto>();
+
+				if (response.Items == null && !response.Success)
+					return new ApiReponseDto<List<PersonPostDto>>(false, "کد تایید نامعتبر است");
 				if (response.Items != null && response.Items.Any()) return new ApiReponseDto<List<PersonPostDto>>(true, "", true, response.Items);
 
 				if (string.IsNullOrEmpty(response.AccessToken.Token)) return new ApiReponseDto<List<PersonPostDto>>(false, "کد تایید نامعتبر است");

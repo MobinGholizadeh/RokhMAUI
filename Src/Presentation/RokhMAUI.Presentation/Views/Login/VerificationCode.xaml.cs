@@ -10,6 +10,7 @@ public partial class VerificationCode : ContentPage
 	public VerificationCode(VerificationCodeVM vm)
 	{
 		InitializeComponent();
+		HandlerChanged += OnHandlerChanged;
 		BindingContext = vm;
 	}
 	void OnHandlerChanged(object sender, EventArgs e)

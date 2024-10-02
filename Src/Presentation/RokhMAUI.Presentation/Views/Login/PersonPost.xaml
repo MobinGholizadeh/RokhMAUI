@@ -76,11 +76,11 @@
 
                 </VerticalStackLayout>
                 <Button
-                x:Name="VerificationBtn"
-                Text="ورود به حساب کاربری"
-                Style="{StaticResource VerificationBtn}"
-                Command="{Binding FinalLoginCommand}"
-                HorizontalOptions="Fill"
+                    x:Name="VerificationBtn"
+                    Text="ورود به حساب کاربری"
+                    Style="{StaticResource VerificationBtn}"
+                    Command="{Binding FinalLoginCommand}"
+                    HorizontalOptions="Fill"
                 >
 
                 </Button>

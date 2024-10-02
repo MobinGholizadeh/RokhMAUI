@@ -52,7 +52,7 @@ namespace RokhMAUI.Presentation.ViewModels
 				if (result.HasPersonPost)
 				{
 					var serializedItems = result.Data.ToJson();
-					await Shell.Current.GoToAsync($"{nameof(PersonPost)}?serializedPersonPosts={serializedItems}&code={code}&mobile{Mobile}");
+					await Shell.Current.GoToAsync($"{nameof(PersonPost)}?serializedPersonPosts={serializedItems}&phoneNumber={mobile}&code={code}");
 					Digit1 = "";
 					Digit2 = "";
 					Digit3 = "";
@@ -60,7 +60,10 @@ namespace RokhMAUI.Presentation.ViewModels
 					Digit5 = "";
 					Digit6 = "";
 				}
-				await App.Current.MainPage.DisplayAlert("Message", result.Message, "OK");
+				if (!result.Success)
+				{
+					await App.Current.MainPage.DisplayAlert("Message", result.Message, "OK");
+				}
 
 			}
 		}
